@@ -5,7 +5,7 @@ require_once 'dbconnect.php';
 
 
 if (isset($_SESSION['user']) != "") {
-    header("Location: login.php");
+    header("Location: ./index.php?page=memberW");
     exit;
 }
 
@@ -54,6 +54,8 @@ if (isset($_POST['btn-login'])) {
 ?>
 
 <!DOCTYPE html>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

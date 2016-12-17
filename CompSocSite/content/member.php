@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
+    header("Location: ./index.php?page=login");
     exit;
 }
 $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
@@ -85,9 +85,17 @@ $userRow = mysqli_fetch_array($res);
                 </div>
             </div>
         </nav>-->
-
+<ul class="nav nav-pills navbar-right">
+    <li class="active"><a href="#">Hi <?php echo $userRow['userName']; ?></a></li>
+<li class="active"><a href="#">Emails  <span class="badge">112</span></a></li>
+    <li class="active"><a href="index.php?page=quiz">Your Score is <span class="badge"><?php echo $userRow['score']; ?></span></a></li>
+     <li><a href="./content/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+    
+    
+</ul> 
+        
         <div id="wrapper">
-
+           
             <div class="container">
 
                 <div class="row">

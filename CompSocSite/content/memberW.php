@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
+    header("Location: ./index.php?page=login");
     exit;
 }
 $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
@@ -11,7 +11,7 @@ $userRow = mysqli_fetch_array($res);
 ?>
 <!DOCTYPE html>
 <html>
-    --<head>
+    <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@ $userRow = mysqli_fetch_array($res);
         <link href="../css/webpanthers.css" rel="stylesheet">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    </head>-->
+    </head>
     <body>
 
       
@@ -33,19 +33,19 @@ $userRow = mysqli_fetch_array($res);
             <div class="container">
 
                 <div class="row">
-
-                    <div class="col-md-6">
+<div class="text-center col-md-12"><div class="page-heading"> <div class="panel-body">
+                    <div text-center class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4><i class="fa fa-fw fa-check"></i>MASTER COMPUTING QUIZ Hi <?php echo $userRow['userName']; ?></h4>
+                                <h4><i class="fa fa-fw fa-check"></i> Hi <?php echo $userRow['userName']; ?></h4>
                             </div>
                             <div class="panel-body">
                                 <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXX XXXX XXXX XXXXXXX XXXX XXXXX XXXX  </p>
                                 <a href="../index.php?page=member" class="btn btn-default">Member Area</a>
                             </div>
                         </div>
-                    </div>
-
+  </div>                  </div>
+</div>
                     
                 </div>
 

@@ -33,6 +33,7 @@
                         <li>
                             <a href="?page=about">About Us</a>
                         </li>
+                        
                         <li>
                             <a href="?page=event">Events</a>
                         </li>
@@ -51,7 +52,7 @@
                                     <a href="?page=forum">Forum</a>
                                 </li>
                                 <li>
-                                    <a href="?page=resorces">Resouces</a>
+                                    <a href="?page=resouces">Resouces</a>
                                 </li>
                             </ul>
                         </li>
