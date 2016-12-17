@@ -41,7 +41,7 @@ $userRow = mysqli_fetch_array($res);
                             </div>
                             <div class="panel-body">
                                 <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXX XXXX XXXX XXXXXXX XXXX XXXXX XXXX  </p>
-                                <a href="./content/quiz.php" class="btn btn-default">More</a>
+                                <a href="../index.php?page=member" class="btn btn-default">Member Area</a>
                             </div>
                         </div>
                     </div>

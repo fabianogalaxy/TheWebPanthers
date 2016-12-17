@@ -1,17 +1,19 @@
 <?php
 ob_start();
 session_start();
-require_once 'dbconnect.php';
-
-
 if (isset($_SESSION['user']) != "") {
-    header("Location: login.php");
-    exit;
+    header("Location: member.php");
 }
+include_once 'dbconnect.php';
 
 $error = false;
 
-if (isset($_POST['btn-login'])) {
+if (isset($_POST['btn-signup'])) {
+
+
+    $name = trim($_POST['name']);
+    $name = strip_tags($name);
+    $name = htmlspecialchars($name);
 
     $email = trim($_POST['email']);
     $email = strip_tags($email);
@@ -21,38 +23,61 @@ if (isset($_POST['btn-login'])) {
     $pass = strip_tags($pass);
     $pass = htmlspecialchars($pass);
 
-    if (empty($email)) {
+    if (empty($name)) {
         $error = true;
-        $emailError = "Please enter your email address.";
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $nameError = "Please enter your full name.";
+    } else if (strlen($name) < 3) {
+        $error = true;
+        $nameError = "Name must have atleat 3 characters.";
+    } else if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
+        $error = true;
+        $nameError = "Name must contain alphabets and space.";
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = true;
         $emailError = "Please enter valid email address.";
+    } else {
+
+        $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
+        $result = mysqli_query($conn, $query);
+        $count = mysqli_num_rows($result);
+        if ($count != 0) {
+            $error = true;
+            $emailError = "Provided Email is already in use.";
+        }
     }
 
     if (empty($pass)) {
         $error = true;
-        $passError = "Please enter your password.";
+        $passError = "Please enter password.";
+    } else if (strlen($pass) < 6) {
+        $error = true;
+        $passError = "Password must have atleast 6 characters.";
     }
 
-    // if there's no error, continue to login
+
+    $password = hash('sha256', $pass);
+
+
     if (!$error) {
 
-        $password = hash('sha256', $pass); // password hashing using SHA256
+        $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
+        $res = mysqli_query($conn, $query);
 
-        $res = mysqli_query($conn, "SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
-        $row = mysqli_fetch_array($res);
-        $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
-
-        if ($count == 1 && $row['userPass'] == $password) {
-            $_SESSION['user'] = $row['userId'];
-            header("Location: memberW.php");
+        if ($res) {
+            $errTyp = "success";
+            $errMSG = "Successfully registered, you may login now";
+            unset($name);
+            unset($email);
+            unset($pass);
         } else {
-            $errMSG = "Incorrect Credentials, Try again...";
+            $errTyp = "danger";
+            $errMSG = "Something went wrong, try again later...";
         }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -71,7 +96,7 @@ if (isset($_POST['btn-login'])) {
                     <div class="col-md-12">
 
                         <div class="form-group">
-                            <h2 class="">Sign In.</h2>
+                            <h2 class="">Sign Up.</h2>
                         </div>
 
                         <div class="form-group">
@@ -82,7 +107,7 @@ if (isset($_POST['btn-login'])) {
 if (isset($errMSG)) {
     ?>
                             <div class="form-group">
-                                <div class="alert alert-danger">
+                                <div class="alert alert-<?php echo ($errTyp == "success") ? "success" : $errTyp; ?>">
                                     <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
                                 </div>
                             </div>
@@ -92,8 +117,16 @@ if (isset($errMSG)) {
 
                         <div class="form-group">
                             <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
+                            </div>
+                            <span class="text-danger"><?php echo $nameError; ?></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
                             </div>
                             <span class="text-danger"><?php echo $emailError; ?></span>
                         </div>
@@ -101,7 +134,7 @@ if (isset($errMSG)) {
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                <input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="15" />
+                                <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
                             </div>
                             <span class="text-danger"><?php echo $passError; ?></span>
                         </div>
@@ -111,7 +144,7 @@ if (isset($errMSG)) {
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
+                            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
                         </div>
 
                         <div class="form-group">
@@ -119,7 +152,7 @@ if (isset($errMSG)) {
                         </div>
 
                         <div class="form-group">
-                            <a href="register.php">Sign Up Here...</a>
+                            <a href="login.php">Sign in Here...</a>
                         </div>
 
                     </div>

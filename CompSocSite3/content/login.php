@@ -45,7 +45,7 @@ if (isset($_POST['btn-login'])) {
 
         if ($count == 1 && $row['userPass'] == $password) {
             $_SESSION['user'] = $row['userId'];
-            header("Location: memberW.php");
+            header("Location: member.php");
         } else {
             $errMSG = "Incorrect Credentials, Try again...";
         }
