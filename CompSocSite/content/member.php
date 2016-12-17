@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 if (!isset($_SESSION['user'])) {
-    header("Location: ./content/login.php");
+    header("Location: login.php");
     exit;
 }
 $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
@@ -91,6 +91,7 @@ $userRow = mysqli_fetch_array($res);
             <div class="container">
 
                 <div class="row">
+                                                    <h4><i class="fa fa-fw fa-check"></i>MASTER COMPUTING QUIZ Hi <?php echo $userRow['userName']; ?></h4>
 
                     <div class="col-md-6">
                         <div class="panel panel-default">

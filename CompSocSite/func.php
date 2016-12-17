@@ -33,6 +33,30 @@ TAG;
 Computing Blog - NCI Computer Society
 TAG;
             break;
+    
+    case 'member':
+            $titulo = <<<'TAG'
+Computing Blog - NCI Computer Society
+TAG;
+            break;
+    
+       case 'forum':
+            $titulo = <<<'TAG'
+Computing Blog - NCI Computer Society
+TAG;
+            break;
+       case 'quiz':
+            $titulo = <<<'TAG'
+Computing Blog - NCI Computer Society
+TAG;
+            break;
+       case 'resouces':
+            $titulo = <<<'TAG'
+Computing Blog - NCI Computer Society
+TAG;
+            break;
+    
+
 
 
     endswitch;
