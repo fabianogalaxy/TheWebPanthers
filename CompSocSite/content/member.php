@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 if (!isset($_SESSION['user'])) {
-    header("Location: ./index.php?page=login");
+    header("Location: ./content/login.php");
     exit;
 }
 $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);

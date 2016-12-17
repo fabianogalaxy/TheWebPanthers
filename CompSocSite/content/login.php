@@ -5,7 +5,7 @@ require_once 'dbconnect.php';
 
 
 if (isset($_SESSION['user']) != "") {
-    header("Location: ./index.php?page=memberW");
+    header("Location: ./content/login");
     exit;
 }
 
@@ -45,7 +45,7 @@ if (isset($_POST['btn-login'])) {
 
         if ($count == 1 && $row['userPass'] == $password) {
             $_SESSION['user'] = $row['userId'];
-            header("Location: memberW.php");
+            header("Location: ../index.php?page=member");
         } else {
             $errMSG = "Incorrect Credentials, Try again...";
         }
