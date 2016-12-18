@@ -62,6 +62,34 @@ Register NOW - NCI Computer Society
 TAG;
 
             break;
+        case 'about':
+            $titulo = <<<'TAG'
+About us - NCI Computer Society
+TAG;
+
+            break;
+    
+        case 'event':
+            $titulo = <<<'TAG'
+Events - NCI Computer Society
+TAG;
+
+            break;
+    
+        case 'register':
+            $titulo = <<<'TAG'
+Register HERE - NCI Computer Society
+TAG;
+
+            break;
+    
+        case 'login':
+            $titulo = <<<'TAG'
+LOGIN HERE - NCI Computer Society
+TAG;
+
+            break;
+    
     
 
 
