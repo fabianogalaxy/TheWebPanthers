@@ -902,7 +902,6 @@
 		$.error( 'Method ' +  method + ' does not exist on jQuery.jqBootstrapValidation' );
 			return null;
 		}
-
 	};
 
   $.jqBootstrapValidation = function (options) {

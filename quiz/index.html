@@ -5,36 +5,6 @@
     <title>Quiz Builder</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <style>
-        .quiz{
-        border: 1px solid black;
-        padding: 20px;
-        }
-        
-        .MyQ{
-            font-size: 24px;
-            font-weight: bold;
-            padding: 10px;
-        }
-        .selAnswer{
-            background-color: cadetblue;
-            color: white;
-        }
-        .btnAns{
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-            display: block;
-            font-size: 16px;
-        }
-        .btnAns:Hover{
-            background-color: cornflowerblue;
-            color: azure;
-            }
-        .endScore{
-            font-size: 20px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -50,11 +20,8 @@
     <script>
         function quiz(){
             var score=document.getElementById("score").innerHTML;
-            window.location.href="send.php?score="+score+"&a1="+a1;
-            
+            window.location.href="send.php?score="+score+"&a1="+a1; 
         }
-    
     </script>
-    
-    </body>
+</body>
 </html>
