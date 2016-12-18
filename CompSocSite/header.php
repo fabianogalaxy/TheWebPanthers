@@ -12,12 +12,9 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     </head>
-
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top navbar-dark" role="navigation" style="background-color: #2a0744; ">
-
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-dark"  style="background-color: #2a0744; ">
             <div class="container">
-
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
                             data-target="#bs-example-navbar-collapse-1">
@@ -33,7 +30,6 @@
                         <li>
                             <a href="?page=about">About Us</a>
                         </li>
-                        
                         <li>
                             <a href="?page=event">Events</a>
                         </li>

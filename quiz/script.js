@@ -14,7 +14,7 @@ btnNxt.onclick = function(){
 };
 function loadQuestions(){
     var a = new XMLHttpRequest();
-    a.open( "GET", "https://api.myjson.com/bins/1hjdt", true);
+    a.open( "GET", "https://api.myjson.com/bins/wqx4l", true);
     a.onreadystatechange = function () {
     if (a.readyState ==4){
         myObj = JSON.parse(a.responseText);

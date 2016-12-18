@@ -828,7 +828,7 @@ if (typeof jQuery === 'undefined') {
       $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
 
       if (e.isDefaultPrevented()) return
-
+      
       $this
         .trigger('focus')
         .attr('aria-expanded', 'true')
