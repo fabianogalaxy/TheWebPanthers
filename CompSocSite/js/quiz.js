@@ -69,19 +69,18 @@ function buildQuiz(pg){
             crtAnswer = myObj[page].answers[myCorrect];
             var questionHolder = '';
             var yesCor ='';
-
             for(var i in myObj[page].answers){
                 var aClass = '';
                 if(myObj[page].mySel == i){
                     aClass = ' selAnswer ';
                 }
-                if(i == myCorrect){ yesCor = '*';
+                if(i == myCorrect){ yesCor = '';
                 }else {
                     yesCor='';
                 }
                 questionHolder += '<div class="col-sm-6"><div class="btnAns' + aClass +'"data-id="' + parseInt(i) + '">' + myObj[page].answers[i] + '</div></div>';
             }
-            output.innerHTML ='<div class="MyQ">' + myQuestion + ' ' +  myCorrect + '</div>';
+            output.innerHTML ='<div class="MyQ">' + myQuestion + '</div>';
             output.innerHTML += questionHolder;
                 for(var x = 0; x < bAnswer.length; x++){
                     bAnswer[x].addEventListener('click', myAnswer, false);
@@ -101,13 +100,13 @@ function myAnswer(){
         myResult = "incorrect";
     }
     myQueRep[page] = iId;
-     for (var x = 0; x < bAnswer.length; x++){
-         console.dir(bAnswer[x]);
-         if(iId == x){
-             bAnswer[x].classList.add("selAnswer");
+     for (var y = 0; y < bAnswer.length; y++){
+         console.dir(bAnswer[y]);
+         if(iId == y){
+             bAnswer[y].classList.add("selAnswer");
          }
             else{
-             bAnswer[x].classList.remove("selAnswer");
+             bAnswer[y].classList.remove("selAnswer");
          }
      }
     console.log(myQueRep);
