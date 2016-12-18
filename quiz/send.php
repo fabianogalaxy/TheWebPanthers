@@ -22,9 +22,9 @@ if ($conn->query($sql) === TRUE) {
             echo $row["id"]."<br />".$row["result"]."<hr/>";
         }
     }
-} else {
+} 
+else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 $conn->close();
 ?>
