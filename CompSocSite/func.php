@@ -24,7 +24,7 @@ TAG;
             break;
         case 'contact':
             $titulo = <<<'TAG'
-Contact - NCI Computer Society
+Contact Us - NCI Computer Society
 TAG;
             break;
               
@@ -36,25 +36,60 @@ TAG;
     
     case 'member':
             $titulo = <<<'TAG'
-Computing Blog - NCI Computer Society
+Member Area - NCI Computer Society
 TAG;
             break;
     
        case 'forum':
             $titulo = <<<'TAG'
-Computing Blog - NCI Computer Society
+Forum - NCI Computer Society
 TAG;
             break;
        case 'quiz':
             $titulo = <<<'TAG'
-Computing Blog - NCI Computer Society
+Quiz - NCI Computer Society
 TAG;
             break;
-       case 'resouces':
+       case 'resources':
             $titulo = <<<'TAG'
-Computing Blog - NCI Computer Society
+Resourses - NCI Computer Society
 TAG;
+
             break;
+       case 'register':
+            $titulo = <<<'TAG'
+Register NOW - NCI Computer Society
+TAG;
+
+            break;
+        case 'about':
+            $titulo = <<<'TAG'
+About us - NCI Computer Society
+TAG;
+
+            break;
+    
+        case 'event':
+            $titulo = <<<'TAG'
+Events - NCI Computer Society
+TAG;
+
+            break;
+    
+        case 'register':
+            $titulo = <<<'TAG'
+Register HERE - NCI Computer Society
+TAG;
+
+            break;
+    
+        case 'login':
+            $titulo = <<<'TAG'
+LOGIN HERE - NCI Computer Society
+TAG;
+
+            break;
+    
     
 
 
