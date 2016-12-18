@@ -37,7 +37,7 @@
      <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="btn btn-primary pull-right">
-                          <a href="../index.php?page=quiz" style="color:yellow;">Member Area</a> 
+                          <a href="../index.php?page=member" style="color:yellow;">Member Area</a> 
                         </div>
                       </div>
     
