@@ -59,14 +59,13 @@
     <title>Welcome -<?php echo $userRow['userName']; ?></title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"  />
     <link rel="stylesheet" href="../css/webpanthers.css" type="text/css" />
-    <link href="css/1.css" rel="stylesheet">
-    <script src="css/1.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="login-form">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
           <div class="col-md-12">
+              <div class="col-md-12">
             <div class="login-header">
               <h1><b>Login</b></h1>
             </div>
@@ -124,7 +123,10 @@
           </div> 
         </form>
       </div>
+        </div>
       <hr>
+      
+      
 <footer>
   <div class="container">
     <div class="row">
@@ -134,7 +136,12 @@
     </div>
   </div>
 </footer>
-    </div>
+            <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/validate_email.js"></script>
+            <script src="js/panthers.js"></script>
+    
   </body>
 </html>
 <?php ob_end_flush(); ?>

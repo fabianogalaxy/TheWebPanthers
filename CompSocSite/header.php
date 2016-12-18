@@ -64,7 +64,7 @@
             </div>
         </nav>
         <script src="js/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/jqBootstrapValidation.js"></script>
         <script src="js/validate_email.js"></script>
     </body>
