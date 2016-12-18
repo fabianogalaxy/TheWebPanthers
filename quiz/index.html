@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+    <-- modifed from 
+Laurence Svekis JavaScript Dynamic Quiz Application-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,7 +12,6 @@
         border: 1px solid black;
         padding: 20px;
         }
-        
         .MyQ{
             font-size: 24px;
             font-weight: bold;
@@ -50,7 +51,7 @@
     <script>
         function quiz(){
             var score=document.getElementById("score").innerHTML;
-            window.location.href="send.php?score="+score+"&a1="+a1;
+            window.location.href="send.php?score="+score;
             
         }
     

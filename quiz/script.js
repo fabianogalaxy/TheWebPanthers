@@ -1,3 +1,5 @@
+/*modifed from 
+Laurence Svekis JavaScript Dynamic Quiz Application*/
 var output = document.getElementById('output');
 var bAnswer = document.getElementsByClassName('btnAns');
 var myObj = '';
