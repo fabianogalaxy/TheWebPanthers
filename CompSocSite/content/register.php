@@ -82,7 +82,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Welcome -<?php echo $userRow['userName']; ?></title>
+    <title>SIGN UP</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"  />
     <link rel="stylesheet" href="../css/webpanthers.css" type="text/css" />
   </head>

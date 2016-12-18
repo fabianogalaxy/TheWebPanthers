@@ -186,3 +186,59 @@ h1, h2, h3, h4, h5, h6, a {
   }
 }
 
+/*Quiz*/
+ .container{
+        border: 1px solid black;
+        padding: 20px;
+        }
+        
+        .MyQ{
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .selAnswer{
+            background-color: cadetblue;
+            color: white;
+        }
+        .btnAns{
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            display: block;
+            font-size: 16px;
+        }
+        .btnAns:Hover{
+            background-color: cornflowerblue;
+            color: azure;
+            }
+        .endScore{
+            font-size: 20px;
+        }
+        .quiz{
+        border: 1px solid black;
+        padding: 20px;
+        }
+        .MyQ{
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .selAnswer{
+            background-color: cadetblue;
+            color: white;
+        }
+        .btnAns{
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            display: block;
+            font-size: 16px;
+        }
+        .btnAns:Hover{
+            background-color: cornflowerblue;
+            color: azure;
+            }
+        .endScore{
+            font-size: 20px;
+        }

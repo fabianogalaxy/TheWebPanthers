@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "test";
+$password = "password";
+$dbname = "soclogin";
 $score=$_GET['score'];
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,9 +20,11 @@ if ($conn->query($sql) === TRUE) {
     if($result->num_rows>0){
         while($row=$result->fetch_assoc()){
             echo $row["id"]."<br />".$row["result"]."<hr/>";
+           
         }
     }
-} 
+}  
+
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

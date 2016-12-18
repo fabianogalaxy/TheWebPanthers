@@ -1,55 +1,63 @@
 <?php
-ob_start();
-session_start();
-require_once 'dbconnect.php';
-if (!isset($_SESSION['user'])) {
-    header("Location: ./content/login.php");
-    exit;
-}
-$res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
-$userRow = mysqli_fetch_array($res);
-?>
+  ob_start();
+  session_start();
+  require_once 'dbconnect.php';
+  if (!isset($_SESSION['user'])) {
+      header("Location: ./content/login.php");
+      exit;
+  }
+  $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
+  $userRow = mysqli_fetch_array($res);
+  ?>
+
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Web site Nci Computing Society ">
-<meta name="The WebPanthers Team" content="Project web aplication">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Welcome -<?php echo $userRow['userName']; ?></title>
-<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="../css/webpanthers.css" type="text/css" />
-<link href="../css/webpanthers.css" rel="stylesheet">
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<html lang="en">
+<head> <script src= "../js/quiz.js"> </script>
+    <meta charset="utf-8">
+    <title>Quiz Builder</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="../css/quiz.css" rel="stylesheet">
 </head>
 <body>
-<hr>
-<div class="row">
-  <div class="col-sm-10 col-sm-offset-1 hid">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 text-center">
-        <div class="panel">
-          <div class="panel-heading">
-            <h4></i><b>THIS AREA IS UNDER CONSTRUCTION, <?php echo $userRow['userName']; ?> THANKS FOR YOUR VISIT</b></h4>
-          </div>
-          <div class="text-cente panel-body">
-            <p>YOU CAN CHECK OUT OUR MEMBER AREA OR OUR QUIZ FOR THE TIME BEING, WE ARE BRINGING MORE NEWS SHORTLY </p>
-            <a href="./index.php?page=member" class="btn btn-default">Member Area</a> <a href="./index.php?page=quiz" class="btn btn-default">Master Quiz</a> <a href="./index.php?page=contact" class="btn btn-default">Contact</a> </div>
+    <div class="container" style="background-color:black">
+        <div class="row quiz "style="background-color:white";><div class="panel-body" >
+            <div id ="output"  ></div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-sm-6"><div id="btnPre" class="btn btn-primary pull-left">Prev</div></div>
+            <div class="col-sm-6"><div id="btnNxt" class="btn btn-primary pull-right">Next</div></div>
+        </div>
     </div>
-  </div>
-</div>
-<hr>
-<script src="../js/jquery.js"></script> 
-<script src="../js/bootstrap.min.js"></script> 
-<script src="../js/jqBootstrapValidation.js"></script> 
-<script src="../js/validate_email.js"></script>
-</body>
-
-</body>
+    </div>
+    
+    <div class="container" >
+        <div class="row quiz ">
+            <div class="panel-body" >
+     <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="btn btn-primary pull-right">
+                          <a href="../index.php?page=quiz" style="color:yellow;">Member Area</a> 
+                        </div>
+                      </div>
+    
+    <ul class="nav nav-pills navbar-right">
+  <li class="active"><a href="#">Hi <?php echo $userRow['userName']; ?></a></li>
+  <li class="active"><a href="#">Emails <span class="badge">112</span></a></li>
+  <li class="active"><a href="index.php?page=quiz">Your Score is <span class="badge"><?php echo $userRow['score']; ?></span></a></li>
+  <li><a href="./content/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li> <hr/></div></div></div></div>
+    
+     <script src= "../js/quiz.js"> </script>
+   
+    
+    <script>
+        function quiz(){
+            var score=document.getElementById("score").innerHTML;
+            window.location.href="send.php?score="+score;
+            
+        }
+                    
+    </script>
+    
+    </body>
 </html>
-<?php ob_end_flush(); ?>
