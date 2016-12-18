@@ -34,14 +34,14 @@ if (isset($_POST['btn-login'])) {
         $passError = "Please enter your password.";
     }
 
-    // if there's no error, continue to login
+   
     if (!$error) {
 
-        $password = hash('sha256', $pass); // password hashing using SHA256
+        $password = hash('sha256', $pass); 
 
         $res = mysqli_query($conn, "SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
         $row = mysqli_fetch_array($res);
-        $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
+        $count = mysqli_num_rows($res); 
 
         if ($count == 1 && $row['userPass'] == $password) {
             $_SESSION['user'] = $row['userId'];

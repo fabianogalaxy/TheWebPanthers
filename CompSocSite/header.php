@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Web site Nci Computing Society ">
         <meta name="The WebPanthers Team" content="Project web aplication">
-        <title><?php echo titulos();?></title>
+        <title><?php echo titulos();?> </title>
         <link href="css/webpanthers.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -52,7 +52,7 @@
                                     <a href="?page=forum">Forum</a>
                                 </li>
                                 <li>
-                                    <a href="?page=resouces">Resouces</a>
+                                    <a href="?page=resources">Resources</a>
                                 </li>
                             </ul>
                         </li>
