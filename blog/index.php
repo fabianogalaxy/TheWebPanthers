@@ -13,8 +13,7 @@
 
 		<h1>Blogs</h1>
 		<hr />
-
-		<?php
+        <?php
 			try {
 
 				$stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
