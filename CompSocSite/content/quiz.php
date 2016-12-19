@@ -45,7 +45,7 @@
   <li class="active"><a href="#">Hi <?php echo $userRow['userName']; ?></a></li>
   <li class="active"><a href="#">Emails <span class="badge">112</span></a></li>
   <li class="active"><a href="index.php?page=quiz">Your Score is <span class="badge"><?php echo $userRow['score']; ?></span></a></li>
-  <li><a href="./content/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li> <hr/></div></div></div></div>
+  <li><a href="../content/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li> <hr/></div></div></div></div>
     
      <script src= "../js/quiz.js"> </script>
    
