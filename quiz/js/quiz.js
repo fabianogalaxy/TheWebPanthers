@@ -1,5 +1,4 @@
 /*modifed from 
-Laurence Svekis JavaScript Dynamic Quiz Application*//*modifed from 
 Laurence Svekis JavaScript Dynamic Quiz Application
 https://www.udemy.com/javascript-dynamic-quiz-application-from-scratch-json-ajax...https://www.skillshare.com/classes/technology/JavaScript-Dynamic-Quiz-Application-from-Scratch-JSON-AJAX/1554643798/classroom/discussions?via=my-classes&enrolledRedirect=1/*/
 var output = document.getElementById('output');
