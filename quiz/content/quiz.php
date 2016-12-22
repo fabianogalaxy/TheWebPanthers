@@ -1,3 +1,4 @@
+
 <?php
   ob_start();
   session_start();
@@ -13,6 +14,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <--https://www.skillshare.com/classes/technology/JavaScript-Dynamic-Quiz-Application-from-Scratch-JSON-AJAX/1554643798/classroom/discussions?via=my-classes&enrolledRedirect=1
+-->
     <meta charset="utf-8">
     <title>Quiz Builder</title>
     <!-- Latest compiled and minified CSS -->
